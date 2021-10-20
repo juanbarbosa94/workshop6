@@ -22,9 +22,6 @@ resource "aws_instance" "workshop6app-mentor" { #change the resource name with y
   }
   availability_zone = "us-east-1a" # change with your assigned region
   ami = var.images["${var.region}"]
-  #ami               = "ami-02e136e904f3da870" #For us-east-1
-  #ami               = "ami-074cce78125f09d61" #For us-east-2
-  #ami               = "ami-013a129d325529d4d" #For us-west-2
   vpc_security_group_ids = [aws_security_group.sg-workshop6-instance.id]
   user_data = <<-EOF
               #!/bin/bash
